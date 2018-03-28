@@ -4,7 +4,11 @@ window.onload = function(){
 
   var updateView = function() {
     var runningTotal = document.querySelector('#running_total');
-    runningTotal.value = calculator.runningTotal;
+    if(calculator.runningTotal === Infinity){
+      runningTotal.value = 'Undefined: Division By Zero'
+    } else {
+      runningTotal.value = calculator.runningTotal;
+    }
   };
 
   //bind number clicks to number buttons
@@ -32,7 +36,7 @@ window.onload = function(){
     calculator.clearClick();
     updateView();
   };
-  
+
 
 
 }
